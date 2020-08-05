@@ -82,6 +82,8 @@ github.com/pip-services3-go/pip-services3-commons-go v0.0.0-20190804203000-6456c
 github.com/pip-services3-go/pip-services3-commons-go v0.0.0-20191120184752-e90ca65ad1c9/go.mod h1:zuPMQBL05n7s1oEaEdMvJZy6bWnUhbV6LH9wq60+0VE=
 github.com/pip-services3-go/pip-services3-commons-go v1.0.0 h1:hAX42NwjY6k9KGDfsVyeL+8lfNZAzcpJ5+bgAP5PPsc=
 github.com/pip-services3-go/pip-services3-commons-go v1.0.0/go.mod h1:a2fIaCl4TUShJhgMMHmO+7773pf+Nkyrq1JDmJVYjd0=
+github.com/pip-services3-go/pip-services3-commons-go v1.0.1 h1:Dm2QMettphyXPVcwhVKBN78qwq3ZLlGJ5JPd81hO520=
+github.com/pip-services3-go/pip-services3-commons-go v1.0.1/go.mod h1:a2fIaCl4TUShJhgMMHmO+7773pf+Nkyrq1JDmJVYjd0=
 github.com/pip-services3-go/pip-services3-components-go v0.0.0-20191121193353-fd649422216e/go.mod h1:HXw/ZY1ptv0WEICtazRu6ZeWjtmn90maApMBGfzRj8I=
 github.com/pip-services3-go/pip-services3-components-go v1.0.0 h1:v2aJdHYohzNg50jcCrWDmprYRvXwhMaKnDXhNo3WkgM=
 github.com/pip-services3-go/pip-services3-components-go v1.0.0/go.mod h1:Me/KFWw/xeMML89twlGdFKqnvprgt2qyi8xAV1+XKGs=
@@ -101,6 +103,8 @@ github.com/pip-services3-go/pip-services3-mongodb-go v1.0.1/go.mod h1:/ki8gPBzw/
 github.com/pip-services3-go/pip-services3-rpc-go v0.0.0-20200221155527-a4e345ba6290/go.mod h1:boD+x5t7ft4JOTVpHwrn1hz2mQng/zvo9lnLqeE/oPg=
 github.com/pip-services3-go/pip-services3-rpc-go v1.0.0 h1:MUAURWTkgII0yWn/6Nta55AkXXQw3PToOwNLdIhCASs=
 github.com/pip-services3-go/pip-services3-rpc-go v1.0.0/go.mod h1:boD+x5t7ft4JOTVpHwrn1hz2mQng/zvo9lnLqeE/oPg=
+github.com/pip-services3-go/pip-services3-rpc-go v1.0.2 h1:Q9n0GGV9rUi4gQyDJ/3DwD3KV1rp67q904Nprh4afu0=
+github.com/pip-services3-go/pip-services3-rpc-go v1.0.2/go.mod h1:aOoZ0x77elZw1WQWk0WT1s48G5q5vApM3X86jxf7iMI=
 github.com/pip-templates/pip-templates-microservice-go v0.0.0-20200321005227-fc8468d72670 h1:3Y+EaSAF6AO60s3oeubYlFZ8+BedgtRt8r1BBsCbBNY=
 github.com/pip-templates/pip-templates-microservice-go v0.0.0-20200321005227-fc8468d72670/go.mod h1:eOo7Vviy3fM5P8dP1NOfx22lGgAwSOUDT/M9AhDLoRc=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
