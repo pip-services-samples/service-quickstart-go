@@ -1,10 +1,11 @@
 package quickstart
 
 import (
+	"context"
 	"net/http"
 
-	crefer "github.com/pip-services3-go/pip-services3-commons-go/refer"
-	rpc "github.com/pip-services3-go/pip-services3-rpc-go/services"
+	crefer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
+	rpc "github.com/pip-services3-gox/pip-services3-rpc-gox/services"
 )
 
 type HelloWorldRestService struct {
@@ -13,17 +14,15 @@ type HelloWorldRestService struct {
 }
 
 func NewHelloWorldRestService() *HelloWorldRestService {
-	c := HelloWorldRestService{}
-	c.RestService = rpc.NewRestService()
-	c.RestService.IRegisterable = &c
+	c := &HelloWorldRestService{}
+	c.RestService = rpc.InheritRestService(c)
 	c.BaseRoute = "/hello_world"
-	c.DependencyResolver.Put("controller", crefer.NewDescriptor("hello-world", "controller", "*", "*", "1.0"))
-	return &c
+	c.DependencyResolver.Put(context.Background(), "controller", crefer.NewDescriptor("hello-world", "controller", "*", "*", "1.0"))
+	return c
 }
 
-func (c *HelloWorldRestService) SetReferences(references crefer.IReferences) {
-
-	c.RestService.SetReferences(references)
+func (c *HelloWorldRestService) SetReferences(ctx context.Context, references crefer.IReferences) {
+	c.RestService.SetReferences(ctx, references)
 	depRes, depErr := c.DependencyResolver.GetOneRequired("controller")
 	if depErr == nil && depRes != nil {
 		c.controller = depRes.(*HelloWorldController)
@@ -32,9 +31,8 @@ func (c *HelloWorldRestService) SetReferences(references crefer.IReferences) {
 
 func (c *HelloWorldRestService) greeting(res http.ResponseWriter, req *http.Request) {
 	name := req.URL.Query().Get("name")
-	result, err := c.controller.Greeting(name)
+	result, err := c.controller.Greeting(req.Context(), name)
 	c.SendResult(res, req, result, err)
-
 }
 
 func (c *HelloWorldRestService) Register() {

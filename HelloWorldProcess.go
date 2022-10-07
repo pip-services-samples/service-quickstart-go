@@ -1,18 +1,18 @@
 package quickstart
 
 import (
-	cproc "github.com/pip-services3-go/pip-services3-container-go/container"
-	rpcbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
+	cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
+	rpcbuild "github.com/pip-services3-gox/pip-services3-rpc-gox/build"
 )
 
 type HelloWorldProcess struct {
-	cproc.ProcessContainer
+	*cproc.ProcessContainer
 }
 
 func NewHelloWorldProcess() *HelloWorldProcess {
 	c := HelloWorldProcess{}
-	c.ProcessContainer = *cproc.NewProcessContainer("hello-world", "HelloWorld microservice")
-	c.SetConfigPath("./config.yml")
+	c.ProcessContainer = cproc.NewProcessContainer("hello-world", "HelloWorld microservice")
+	c.SetConfigPath("./config.yaml")
 	c.AddFactory(NewHelloWorldServiceFactory())
 	c.AddFactory(rpcbuild.NewDefaultRpcFactory())
 	return &c

@@ -1,11 +1,12 @@
 package main
 
 import (
+	"context"
 	"os"
 	"quickstart"
 )
 
 func main() {
 	proc := quickstart.NewHelloWorldProcess()
-	proc.Run(os.Args)
+	proc.Run(context.Background(), os.Args)
 }

@@ -1,7 +1,9 @@
 package quickstart
 
 import (
-	cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
+	"context"
+
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 )
 
 type HelloWorldController struct {
@@ -14,11 +16,11 @@ func NewHelloWorldController() *HelloWorldController {
 	return &c
 }
 
-func (c *HelloWorldController) Configure(config *cconf.ConfigParams) {
+func (c *HelloWorldController) Configure(ctx context.Context, config *cconf.ConfigParams) {
 	c.defaultName = config.GetAsStringWithDefault("default_name", c.defaultName)
 }
 
-func (c *HelloWorldController) Greeting(name string) (result string, err error) {
+func (c *HelloWorldController) Greeting(ctx context.Context, name string) (result string, err error) {
 	if name == "" {
 		name = c.defaultName
 	}
